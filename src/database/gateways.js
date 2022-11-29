@@ -5,7 +5,7 @@ function getAllGateways() {
     try {
         return db.gateways;
     } catch (error) {
-        throw new Error({ message: error.message ? error.message : error });
+        throw ({ message: error.message ? error.message : error });
     }
 }
 
@@ -19,7 +19,7 @@ function getGateway(gateid) {
         }
         return gate;
     } catch (error) {
-        throw new Error({ message: error.message ? error.message : error });
+        throw ({ message: error.message ? error.message : error });
     }
 }
 
@@ -35,7 +35,7 @@ function addGateway(newGate) {
         //save(db);
         return newGate;
     } catch (error) {
-        throw new Error({ message: error?.message || error });
+        throw ({ message: error?.message || error });
     }
 }
 
@@ -52,7 +52,7 @@ function deleteGateway(gateid) {
         //save(db);
         return deleted;
     } catch (error) {
-        throw new Error({ message: error.message ? error.message : error });
+        throw ({ message: error.message ? error.message : error });
     }
 }
 
@@ -66,7 +66,7 @@ function getAllPeripheralsInGate(gateid) {
         }
         return db.gateways[index].peripherals;
     } catch (error) {
-        throw new Error({ message: error?.message || error });
+        throw ({ message: error?.message || error });
     }
 }
 
@@ -86,7 +86,7 @@ function getPeripheral(gateid, periid) {
         }
         return db.gateways[index].peripherals[indexp];
     } catch (error) {
-        throw new Error({ message: error?.message || error });
+        throw ({ message: error?.message || error });
     }
 }
 
@@ -102,7 +102,7 @@ function addPeripheraltoGate(gateid, newperipheral) {
         //save(db);
         return newperipheral;
     } catch (error) {
-        throw new Error({ message: error?.message || error });
+        throw ({ message: error?.message || error });
     }
 }
 
@@ -125,7 +125,7 @@ function deletePeripheral(gateid, periid) {
         //save(db);
         return deleted;
     } catch (error) {
-        throw new Error({ message: error?.message || error });
+        throw ({ message: error?.message || error });
     }
 }
 

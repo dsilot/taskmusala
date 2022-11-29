@@ -6,7 +6,7 @@ const getAllService = async (gateid) => {
   try {
     return getAllPeripheralsInGate(gateid);
   } catch (error) {
-    throw new Error({ message: `Fail to get Peripheral list of given Gateway: ${error?.message || error}` });
+    throw ({ message: `Fail to get Peripheral list of given Gateway: ${error?.message || error}` });
   }
 };
 
@@ -14,7 +14,7 @@ const getPeripheralService = async (gateid, periid) => {
   try {
     return getPeripheral(gateid, periid);
   } catch (error) {
-    throw new Error({ message: `Fail to get Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to get Peripheral: ${error?.message || error}` });
   }
 };
 
@@ -34,7 +34,7 @@ const newPeripheralService = async (gateid, uid, vendor, state) => {
     }
     return addPeripheraltoGate(newperipheral);
   } catch (error) {
-    throw new Error({ message: `Fail to add Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to add Peripheral: ${error?.message || error}` });
   }
 
 };
@@ -43,7 +43,7 @@ const deletePeripheralService = async (gateid, periid) => {
   try {
     return deletePeripheral(gateid, periid);
   } catch (error) {
-    throw new Error({ message: `Fail to delete Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to delete Peripheral: ${error?.message || error}` });
   }
 };
 
