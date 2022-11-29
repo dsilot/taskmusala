@@ -1,0 +1,48 @@
+{
+    "gateways":[
+        {
+            "id": "60b40630-713c-11ec-8cff-7f82f42f57ce",
+            "serial":"yWuImr95L9rj0y74itnSC",
+            "name": "gate1",
+            "ipv4":"192.168.30.2",
+            "peripherals":[
+                {
+                    "id": "aceaa425-7769-4ad7-af6b-422d25f23be1",
+                    "uid":"1234567890",
+                    "vendor":"Cisco",
+                    "create_date":"11/28/2022, 2:21:56 PM",
+                    "status": false
+                },
+                {
+                    "id": "aceaa425-7769-4ad7-af6b-422d25f23be2",
+                    "uid":"1234567891",
+                    "vendor":"TP-LINk",
+                    "create_date":"11/28/2022, 3:21:56 PM",
+                    "status": true
+                }
+            ]
+        },
+        {
+            "id": "60b40630-713c-11ec-8cff-7f82f42f57cf",
+            "serial":"yWuImr95L9rj0y74itnSD",
+            "name": "gate2",
+            "ipv4":"192.168.30.3",
+            "peripherals":[
+                {
+                    "id": "aceaa425-7769-4ad7-af6b-422d25f23be3",
+                    "uid":"1234567892",
+                    "vendor":"Dell",
+                    "create_date":"11/28/2022, 4:21:56 PM",
+                    "status": false
+                },
+                {
+                    "id": "aceaa425-7769-4ad7-af6b-422d25f23be4",
+                    "uid":"1234567893",
+                    "vendor":"HP",
+                    "create_date":"11/28/2022, 5:21:56 PM",
+                    "status": true
+                }
+            ]
+        }
+    ]
+}
