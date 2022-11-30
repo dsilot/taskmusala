@@ -1,9 +1,9 @@
-import { validationResult } from 'express-validator';
+const { validationResult } = require('express-validator');
 
-import { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService } from "../services/peripheralService.js";
+const { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService } = require("../services/peripheralService");
 
 //get all peripheral from a gateway
-const getAll = async (req, res) => {
+const getAllP = async (req, res) => {
     const {
         params: { gatewayId },
     } = req;
@@ -20,13 +20,15 @@ const getAll = async (req, res) => {
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 };
+
 //get a peripheral from a gateway
 const getPeripheral = async (req, res) => {
     await get(req, res, "get");
 };
+
 // add mew peripheral to gateway
 const newPeripheral = async (req, res) => {
     const { gateid, uid, vendor, state } = req.body;
@@ -36,15 +38,16 @@ const newPeripheral = async (req, res) => {
             return res.status(400).json({ errors: errors.array() });
         }
         const perip = await newPeripheralService(gateid, uid, vendor, state);
-        res.status(200).json({
+        res.status(201).json({
             success: true,
             data: perip
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 };
+
 // delete peripheral from gateway
 const deletePeripheral = async (req, res) => {
     await get(req, res, "delete");
@@ -72,8 +75,8 @@ async function get(req, res, type) {
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 }
 
-export { getAll, getPeripheral, newPeripheral, deletePeripheral };
+module.exports = { getAllP, getPeripheral, newPeripheral, deletePeripheral };

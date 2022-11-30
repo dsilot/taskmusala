@@ -1,12 +1,12 @@
-import { v1 as uuidv1 } from 'uuid';
+const { v1 } = require('uuid');
 
-import { getAllPeripheralsInGate, getPeripheral, addPeripheraltoGate, deletePeripheral, } from "../database/gateways.js";
+const { getAllPeripheralsInGate, getPeripheral, addPeripheraltoGate, deletePeripheral, } = require("../database/gateways");
 
 const getAllService = async (gateid) => {
   try {
     return getAllPeripheralsInGate(gateid);
   } catch (error) {
-    throw new Error({ message: `Fail to get Peripheral list of given Gateway: ${error?.message || error}` });
+    throw ({ message: `Fail to get Peripheral list of given Gateway: ${error?.message || error}` });
   }
 };
 
@@ -14,7 +14,7 @@ const getPeripheralService = async (gateid, periid) => {
   try {
     return getPeripheral(gateid, periid);
   } catch (error) {
-    throw new Error({ message: `Fail to get Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to get Peripheral: ${error?.message || error}` });
   }
 };
 
@@ -26,15 +26,15 @@ const newPeripheralService = async (gateid, uid, vendor, state) => {
       };
     }
     const newperipheral = {
-      "id": uuidv1(),
+      "id": v1(),
       "uid": uid,
       "vendor": vendor,
       "create_date": new Date().toLocaleString("en-US", { timeZone: "UTC" }),
       "status": state
     }
-    return addPeripheraltoGate(newperipheral);
+    return addPeripheraltoGate(gateid, newperipheral);
   } catch (error) {
-    throw new Error({ message: `Fail to add Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to add Peripheral: ${error?.message || error}` });
   }
 
 };
@@ -43,8 +43,8 @@ const deletePeripheralService = async (gateid, periid) => {
   try {
     return deletePeripheral(gateid, periid);
   } catch (error) {
-    throw new Error({ message: `Fail to delete Peripheral: ${error?.message || error}` });
+    throw ({ message: `Fail to delete Peripheral: ${error?.message || error}` });
   }
 };
 
-export { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService };
+module.exports = { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService };

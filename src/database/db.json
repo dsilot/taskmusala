@@ -11,14 +11,14 @@
                     "uid":"1234567890",
                     "vendor":"Cisco",
                     "create_date":"11/28/2022, 2:21:56 PM",
-                    "status": false
+                    "status": "offline"
                 },
                 {
                     "id": "aceaa425-7769-4ad7-af6b-422d25f23be2",
                     "uid":"1234567891",
                     "vendor":"TP-LINk",
                     "create_date":"11/28/2022, 3:21:56 PM",
-                    "status": true
+                    "status": "online"
                 }
             ]
         },
@@ -33,14 +33,14 @@
                     "uid":"1234567892",
                     "vendor":"Dell",
                     "create_date":"11/28/2022, 4:21:56 PM",
-                    "status": false
+                    "status": "offline"
                 },
                 {
                     "id": "aceaa425-7769-4ad7-af6b-422d25f23be4",
                     "uid":"1234567893",
                     "vendor":"HP",
                     "create_date":"11/28/2022, 5:21:56 PM",
-                    "status": true
+                    "status": "online"
                 }
             ]
         }
