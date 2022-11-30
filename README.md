@@ -1,15 +1,22 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Managing gateways for Musala!
 
-This project has been created using **webpack-cli**, you can now run
+*Requirements*
+- NodeJS
 
+*Installation quide*
+- Clone this repo
+```
+git clone https://github.com/dsilot/taskmusala.git
+
+```
+you can now run
 ```
 npm run build
 ```
-
 or
-
 ```
 yarn build
 ```
-
 to bundle your application
+
+

@@ -1,7 +1,7 @@
-import express from 'express';
-import { body } from 'express-validator';
+const express = require('express');
+const { body } = require('express-validator');
 
-import { getAllP, getPeripheral, newPeripheral, deletePeripheral } from '../controllers/peripheralController.js';
+const { getAllP, getPeripheral, newPeripheral, deletePeripheral } = require('../controllers/peripheralController');
 
 const perip_routes = express.Router();
 
@@ -27,4 +27,4 @@ perip_routes.post("/", rules(), newPeripheral);
 
 perip_routes.delete("/:gatewayId/:peripheralId", deletePeripheral);
 
-export default perip_routes;
+module.exports = perip_routes;

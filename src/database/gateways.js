@@ -1,4 +1,4 @@
-import db from './db.json' assert { type: "json" };
+let db = require('./db.json') ;
 //import save from './utils.js'
 
 function getAllGateways() {
@@ -130,7 +130,7 @@ function deletePeripheral(gateid, periid) {
 }
 
 
-export {
+module.exports = {
     getAllGateways,
     getGateway,
     addGateway,

@@ -1,6 +1,6 @@
-import { v1 as uuidv1 } from 'uuid';
+const { v1 } = require('uuid');
 
-import { getAllPeripheralsInGate, getPeripheral, addPeripheraltoGate, deletePeripheral, } from "../database/gateways.js";
+const { getAllPeripheralsInGate, getPeripheral, addPeripheraltoGate, deletePeripheral, } = require("../database/gateways");
 
 const getAllService = async (gateid) => {
   try {
@@ -26,7 +26,7 @@ const newPeripheralService = async (gateid, uid, vendor, state) => {
       };
     }
     const newperipheral = {
-      "id": uuidv1(),
+      "id": v1(),
       "uid": uid,
       "vendor": vendor,
       "create_date": new Date().toLocaleString("en-US", { timeZone: "UTC" }),
@@ -47,4 +47,4 @@ const deletePeripheralService = async (gateid, periid) => {
   }
 };
 
-export { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService };
+module.exports = { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService };

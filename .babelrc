@@ -1,5 +1,11 @@
 {
-  "plugins": [
-    "@babel/plugin-syntax-import-assertions"
+  "plugins": ["@babel/syntax-dynamic-import"],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ]
   ]
 }

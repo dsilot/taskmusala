@@ -1,6 +1,6 @@
-import { v1 as uuidv1 } from 'uuid';
+const { v1 } = require('uuid');
 
-import { getAllGateways, getGateway, addGateway, deleteGateway } from '../database/gateways.js';
+const { getAllGateways, getGateway, addGateway, deleteGateway } = require( '../database/gateways');
 
 const getAllService = async () => {
     try {
@@ -21,7 +21,7 @@ const getGatewayService = async (gateid) => {
 const newGatewayService = async (serial, name, ipadress) => {
     try {
         const newGateway = {
-            "id": uuidv1(),
+            "id": v1(),
             "serial": serial,
             "name": name,
             "ipv4": ipadress,
@@ -43,4 +43,4 @@ const deleteGatewayService = async (gateid) => {
     }
 };
 
-export { getAllService, getGatewayService, newGatewayService, deleteGatewayService };
+module.exports= { getAllService, getGatewayService, newGatewayService, deleteGatewayService };

@@ -1,7 +1,7 @@
-import express from 'express';
-import { body } from 'express-validator';
+const express = require('express');
+const { body } = require('express-validator');
 
-import { getAll, getGateway, newGateway, deleteGateway } from '../controllers/gatewayController.js';
+const { getAll, getGateway, newGateway, deleteGateway } = require('../controllers/gatewayController');
 
 const gate_routes = express.Router();
 
@@ -25,4 +25,4 @@ gate_routes.post("/", rules(), newGateway);
 
 gate_routes.delete("/:gatewayId", deleteGateway);
 
-export default gate_routes;
+module.exports = gate_routes;

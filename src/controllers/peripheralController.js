@@ -1,6 +1,6 @@
-import { validationResult } from 'express-validator';
+const { validationResult } = require('express-validator');
 
-import { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService } from "../services/peripheralService.js";
+const { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService } = require("../services/peripheralService");
 
 //get all peripheral from a gateway
 const getAllP = async (req, res) => {
@@ -20,7 +20,7 @@ const getAllP = async (req, res) => {
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 };
 
@@ -44,7 +44,7 @@ const newPeripheral = async (req, res) => {
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 };
 
@@ -75,8 +75,8 @@ async function get(req, res, type) {
         });
     } catch (error) {
         res.status(500)
-            .json({ error: error.message ? error.message : error  });
+            .json({ error: error.message ? error.message : error });
     }
 }
 
-export { getAllP, getPeripheral, newPeripheral, deletePeripheral };
+module.exports = { getAllP, getPeripheral, newPeripheral, deletePeripheral };

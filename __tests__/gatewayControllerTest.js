@@ -1,4 +1,4 @@
-import { getAll, getGateway, newGateway, deleteGateway } from '../src/controllers/gatewayController.js';
+const { getAll, getGateway, newGateway, deleteGateway } = require ('../src/controllers/gatewayController');
 
 describe("getAll function", () => {
     test("Return list of all gateways status 200", async () => {

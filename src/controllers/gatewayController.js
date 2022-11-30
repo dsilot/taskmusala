@@ -1,6 +1,6 @@
-import { validationResult } from 'express-validator';
+const { validationResult } = require('express-validator');
 
-import { getAllService, getGatewayService, newGatewayService, deleteGatewayService } from "../services/gatewayService.js";
+const { getAllService, getGatewayService, newGatewayService, deleteGatewayService } = require( "../services/gatewayService");
 // get all gateways
 const getAll = async (req, res) => {
     try {
@@ -64,4 +64,4 @@ async function get(req, res, type) {
 }
 
 
-export { getAll, getGateway, newGateway, deleteGateway };
+module.exports = { getAll, getGateway, newGateway, deleteGateway };
