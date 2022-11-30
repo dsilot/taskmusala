@@ -1,6 +1,6 @@
 const { getAll, getGateway, newGateway, deleteGateway } = require ('../src/controllers/gatewayController');
 
-describe("getAll function", () => {
+describe("GetAll Gateways", () => {
     test("Return list of all gateways status 200", async () => {
 
         const output = {
@@ -140,8 +140,8 @@ describe("Get Gateway", () => {
     });
 });
 
-describe("Create a gateway", () => {
-    test("New a gateway with status 200", async () => {
+describe("Create a Gateway", () => {
+    test("New Gateway with status 200", async () => {
         const output = {
             "success": true,
             "data": {

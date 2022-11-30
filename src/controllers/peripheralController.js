@@ -38,7 +38,7 @@ const newPeripheral = async (req, res) => {
             return res.status(400).json({ errors: errors.array() });
         }
         const perip = await newPeripheralService(gateid, uid, vendor, state);
-        res.status(200).json({
+        res.status(201).json({
             success: true,
             data: perip
         });

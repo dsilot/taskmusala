@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "f4cd32b3-ec79-4f2f-b87c-dc88ddc800aa",
+		"name": "gateway-musala",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ALL gateways",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/gateway",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"gateway"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Gateway by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/gateway/60b40630-713c-11ec-8cff-7f82f42f57ce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"60b40630-713c-11ec-8cff-7f82f42f57ce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Gateway",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serial\":\"yWuImr95L9rj0y74itnSE\",\r\n    \"name\":\"Samsung\",\r\n    \"ipadress\":\"192.168.30.4\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/gateway",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"gateway"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Gateway by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/gateway/60b40630-713c-11ec-8cff-7f82f42f57cf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"gateway",
+						"60b40630-713c-11ec-8cff-7f82f42f57cf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All peripheral from Gateway",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peripheral/60b40630-713c-11ec-8cff-7f82f42f57ce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peripheral",
+						"60b40630-713c-11ec-8cff-7f82f42f57ce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET peripheral from gateway",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peripheral/60b40630-713c-11ec-8cff-7f82f42f57ce/aceaa425-7769-4ad7-af6b-422d25f23be1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peripheral",
+						"60b40630-713c-11ec-8cff-7f82f42f57ce",
+						"aceaa425-7769-4ad7-af6b-422d25f23be1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Peripheral",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"gateid\": \"60b40630-713c-11ec-8cff-7f82f42f57cf\",\r\n   \"uid\":\"4567899876\",\r\n   \"vendor\":\"Cisco\",\r\n   \"state\":\"online\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peripheral",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peripheral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE peripheral from gateway",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/atom+xml",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peripheral/60b40630-713c-11ec-8cff-7f82f42f57ce/aceaa425-7769-4ad7-af6b-422d25f23be1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peripheral",
+						"60b40630-713c-11ec-8cff-7f82f42f57ce",
+						"aceaa425-7769-4ad7-af6b-422d25f23be1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
