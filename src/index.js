@@ -20,7 +20,6 @@ app.use('/api/v1/gateway', gatewayRoutes);
 app.use('/api/v1/peripheral', peripheralRoutes);
 
 
-
 app.listen(port, () => {
  console.log(`[server]: Server is running at https://localhost:${port}`);
 });

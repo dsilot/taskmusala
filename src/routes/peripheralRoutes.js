@@ -1,7 +1,7 @@
 import express from 'express';
 import { body } from 'express-validator';
 
-import { getAll, getPeripheral, newPeripheral, deletePeripheral } from '../controllers/peripheralController.js';
+import { getAllP, getPeripheral, newPeripheral, deletePeripheral } from '../controllers/peripheralController.js';
 
 const perip_routes = express.Router();
 
@@ -15,11 +15,11 @@ const rules = () => {
         body('vendor').notEmpty().trim().escape().withMessage("Vendor is empty"),
         body('vendor').isString().withMessage("Provide a valid vendor"),
         body('state').notEmpty().trim().escape().withMessage("State is empty"),
-        body('state').isBoolean().withMessage("Provide valid state")
+        body('state').isString().withMessage("Provide valid state")
     ];
 };
 
-perip_routes.get("/:gatewayId/", getAll);
+perip_routes.get("/:gatewayId/", getAllP);
 
 perip_routes.get("/:gatewayId/:peripheralId", getPeripheral);
 

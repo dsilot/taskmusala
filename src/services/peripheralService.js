@@ -32,7 +32,7 @@ const newPeripheralService = async (gateid, uid, vendor, state) => {
       "create_date": new Date().toLocaleString("en-US", { timeZone: "UTC" }),
       "status": state
     }
-    return addPeripheraltoGate(newperipheral);
+    return addPeripheraltoGate(gateid, newperipheral);
   } catch (error) {
     throw ({ message: `Fail to add Peripheral: ${error?.message || error}` });
   }

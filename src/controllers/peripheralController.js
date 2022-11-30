@@ -3,7 +3,7 @@ import { validationResult } from 'express-validator';
 import { getAllService, getPeripheralService, newPeripheralService, deletePeripheralService } from "../services/peripheralService.js";
 
 //get all peripheral from a gateway
-const getAll = async (req, res) => {
+const getAllP = async (req, res) => {
     const {
         params: { gatewayId },
     } = req;
@@ -23,10 +23,12 @@ const getAll = async (req, res) => {
             .json({ error: error.message ? error.message : error  });
     }
 };
+
 //get a peripheral from a gateway
 const getPeripheral = async (req, res) => {
     await get(req, res, "get");
 };
+
 // add mew peripheral to gateway
 const newPeripheral = async (req, res) => {
     const { gateid, uid, vendor, state } = req.body;
@@ -45,6 +47,7 @@ const newPeripheral = async (req, res) => {
             .json({ error: error.message ? error.message : error  });
     }
 };
+
 // delete peripheral from gateway
 const deletePeripheral = async (req, res) => {
     await get(req, res, "delete");
@@ -76,4 +79,4 @@ async function get(req, res, type) {
     }
 }
 
-export { getAll, getPeripheral, newPeripheral, deletePeripheral };
+export { getAllP, getPeripheral, newPeripheral, deletePeripheral };
